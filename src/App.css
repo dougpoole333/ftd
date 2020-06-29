@@ -8,7 +8,15 @@
   flex-direction: column;
 }
 .feedback,.title{
-  height: 20px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
   font-weight: 800;
   font-size: 20px;
 }

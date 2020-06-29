@@ -13,7 +13,7 @@ class App extends React.Component{
 
   get initialState() {
     return {
-      clickable: [{i: 144, clicked: false, target: false}, {i: 481, clicked: false, target: false}, {i: 795, clicked: false, target: true}, {i: 435, clicked: false, target: false}, {i: 98, clicked: false, target: false}],
+      clickable: [{i: 20, clicked: false, target: false}, {i: 42, clicked: false, target: false}, {i: 77, clicked: false, target: true}, {i: 13, clicked: false, target: false}, {i: 98, clicked: false, target: false}],
       levelOver: false,
       tryAgain: false
     };
@@ -44,9 +44,8 @@ class App extends React.Component{
   render(){
     return (
       <div className="App">
-        <div className="title">CLICK THE RIGHT DOT</div>
-        <ImageFrame x={30} y={30} boxDim={20} handleClick={this.handleClick} clickable={this.state.clickable}/>
-        <div className="feedback">
+        <ImageFrame x={16} y={8} boxDim={33} handleClick={this.handleClick} clickable={this.state.clickable} tryAgain={this.state.tryAgain} levelOver={this.state.levelOver} resetState={this.resetState}/>
+        <div className="feedback" style={this.state.levelOver ? {pointerEvents: "auto"} : {pointerEvents: "none"}}>
           <div>{this.state.tryAgain ? "TRY AGAIN" : ""}</div>
           <div>{this.state.levelOver ? "NICE!" : ""}</div>
           {this.state.levelOver ? <button onClick={this.resetState}>NEW GAME</button> : ""}
